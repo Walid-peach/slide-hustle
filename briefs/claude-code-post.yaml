@@ -1,0 +1,82 @@
+meta:
+  topic: "Claude Code"
+  language: EN
+  slides: 7
+  output: "slide_hustle_claude_code"
+  export_pdf: true
+
+slides:
+  - id: 1
+    bg: navy
+    watermark: "CLAUDE"
+    title: "Claude Code is not just a terminal chatbot."
+    subtitle: "It is a coding partner that can read, edit, test, and ship with you."
+    swipe: true
+  - id: 2
+    bg: ivory
+    watermark: "PAIN"
+    icon: warning
+    heading: "The old loop is fragmented"
+    content:
+      type: bullets
+      items:
+        - "Ask in chat"
+        - "Copy into the editor"
+        - "Run tests manually"
+        - "Paste errors back"
+    verdict: "The workflow leaks attention."
+  - id: 3
+    bg: navy
+    watermark: "LOOP"
+    icon: arrow
+    heading: "Claude Code closes the loop"
+    content:
+      type: bullets
+      items:
+        - "Reads your repo"
+        - "Makes scoped edits"
+        - "Runs verification"
+        - "Explains the tradeoffs"
+  - id: 4
+    bg: ivory
+    watermark: "SYSTEM"
+    icon: bundles
+    heading: "The best use cases are concrete"
+    content:
+      type: bullets+box
+      items:
+        - "Fix a failing test"
+        - "Add a small feature"
+        - "Review a risky diff"
+      box: "Specific asks produce specific engineering work."
+  - id: 5
+    bg: red
+    watermark: "SHIFT"
+    icon: sun
+    heading: "The skill is delegation."
+    content:
+      type: quote
+      text: "You do not outsource judgment. You outsource mechanical drag."
+    verdict: "That is the unlock."
+  - id: 6
+    bg: navy
+    watermark: "PROMPT"
+    icon: code
+    heading: "A useful prompt"
+    content:
+      type: code
+      code: 'claude "Find why this test fails, fix it, and explain the smallest safe change"'
+  - id: 7
+    bg: ivory
+    watermark: "CTA"
+    icon: check
+    heading: "Start small"
+    content:
+      type: cta
+      command: "Give Claude Code one bounded task."
+      items:
+        - "One repo"
+        - "One goal"
+        - "One verification path"
+      question: "What task would you delegate today?"
+

@@ -1,0 +1,77 @@
+meta:
+  topic: "Slide Hustle"
+  language: EN
+  slides: 7
+  output: "slide_hustle_launch"
+  export_pdf: true
+
+slides:
+  - id: 1
+    bg: navy
+    watermark: "HUSTLE"
+    title: "Your Obsidian notes deserve a better ending."
+    subtitle: "Slide Hustle turns structured briefs into export-ready LinkedIn carousels."
+    swipe: true
+  - id: 2
+    bg: ivory
+    watermark: "MESS"
+    icon: warning
+    heading: "The usual workflow is chaos"
+    content:
+      type: bullets
+      items:
+        - "Draft in one app"
+        - "Design in another"
+        - "Export by hand"
+        - "Fix tiny layout issues forever"
+    verdict: "Great ideas get slowed down by production drag."
+  - id: 3
+    bg: navy
+    watermark: "BRIEF"
+    icon: code
+    heading: "Start with YAML"
+    content:
+      type: code
+      code: 'python generate.py briefs/slide-hustle-launch.yaml'
+  - id: 4
+    bg: ivory
+    watermark: "SYSTEM"
+    icon: bundles
+    heading: "The design system does the heavy lifting"
+    content:
+      type: bullets+box
+      items:
+        - "Fixed rhythm"
+        - "Reusable slide blocks"
+        - "Brand-safe colors"
+      box: "No blank canvas. No layout lottery."
+  - id: 5
+    bg: red
+    watermark: "SHIP"
+    icon: sun
+    heading: "From note to deck in minutes."
+    content:
+      type: quote
+      text: "The point is not to make more content. It is to lower the cost of sharing useful ideas."
+    verdict: "That is the hustle."
+  - id: 6
+    bg: navy
+    watermark: "EXPORT"
+    icon: arrow
+    heading: "Then export"
+    content:
+      type: code
+      code: 'python export.py output/slide_hustle_launch/slides.html'
+  - id: 7
+    bg: ivory
+    watermark: "CTA"
+    icon: check
+    heading: "Write the brief. Ship the slides."
+    content:
+      type: cta
+      command: "Copy the template, write your angle, run the pipeline."
+      items:
+        - "PNG slides"
+        - "PDF deck"
+        - "Consistent brand"
+      question: "What note should become your next carousel?"

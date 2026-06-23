@@ -1,0 +1,86 @@
+meta:
+  topic: "Your carousel topic"
+  language: EN
+  slides: 7
+  output: "slide_hustle_example"
+  export_pdf: true
+
+slides:
+  - id: 1
+    bg: navy
+    watermark: "HOOK"
+    title: "Your sharp carousel hook."
+    subtitle: "A short promise that makes the reader swipe."
+    swipe: true
+
+  - id: 2
+    bg: ivory
+    watermark: "PROBLEM"
+    icon: warning
+    heading: "The problem"
+    content:
+      type: bullets
+      items:
+        - "Point one"
+        - "Point two"
+        - "Point three"
+    verdict: "Name the cost clearly."
+
+  - id: 3
+    bg: navy
+    watermark: "SHIFT"
+    icon: arrow
+    heading: "The shift"
+    content:
+      type: quote
+      text: "A concise statement that reframes the topic."
+
+  - id: 4
+    bg: ivory
+    watermark: "SYSTEM"
+    icon: bundles
+    heading: "The system"
+    content:
+      type: bullets+box
+      items:
+        - "Reusable rules"
+        - "Repeatable workflow"
+        - "Fewer manual decisions"
+      box: "Systems beat blank pages."
+
+  - id: 5
+    bg: red
+    watermark: "IMPACT"
+    icon: sun
+    heading: "The real leverage"
+    content:
+      type: stats
+      items:
+        - value: "5x"
+          label: "faster from idea to publish"
+        - value: "0"
+          label: "manual design decisions"
+    verdict: "Make the highest-impact slide impossible to miss."
+
+  - id: 6
+    bg: navy
+    watermark: "PROMPT"
+    icon: code
+    heading: "The command"
+    content:
+      type: code
+      code: 'claude "Generate carousel from briefs/my-post.yaml"'
+
+  - id: 7
+    bg: ivory
+    watermark: "CTA"
+    icon: check
+    heading: "Your turn"
+    content:
+      type: cta
+      command: "Copy the template. Write the brief. Run the agent."
+      items:
+        - "Keep the message sharp"
+        - "Let the system handle design"
+      question: "What would you automate first?"
+

@@ -1,0 +1,80 @@
+meta:
+  topic: "Databricks AI Tools"
+  language: EN
+  slides: 7
+  output: "slide_hustle_databricks"
+  export_pdf: true
+
+slides:
+  - id: 1
+    bg: navy
+    watermark: "DATABRICKS"
+    title: "AI tools are entering the data engineering workflow."
+    subtitle: "The opportunity is not magic. It is removing low-value friction."
+    swipe: true
+  - id: 2
+    bg: ivory
+    watermark: "FRICTION"
+    icon: warning
+    heading: "Data teams lose time in the edges"
+    content:
+      type: bullets
+      items:
+        - "Notebook cleanup"
+        - "SQL explanation"
+        - "Pipeline documentation"
+        - "Test scaffolding"
+    verdict: "Small tasks compound into slow delivery."
+  - id: 3
+    bg: navy
+    watermark: "AUGMENT"
+    icon: arrow
+    heading: "Use AI where context is local"
+    content:
+      type: bullets
+      items:
+        - "Explain a query"
+        - "Generate a draft test"
+        - "Summarize a lineage path"
+  - id: 4
+    bg: ivory
+    watermark: "PATTERN"
+    icon: catalog
+    heading: "Governance still matters"
+    content:
+      type: bullets+box
+      items:
+        - "Keep permissions explicit"
+        - "Review generated code"
+        - "Trace production changes"
+      box: "AI does not remove ownership."
+  - id: 5
+    bg: red
+    watermark: "IMPACT"
+    icon: sun
+    heading: "The best AI workflow is boring."
+    content:
+      type: quote
+      text: "It saves time, preserves controls, and makes the next engineer faster."
+    verdict: "That is what production teams need."
+  - id: 6
+    bg: navy
+    watermark: "PROMPT"
+    icon: code
+    heading: "Prompt the system"
+    content:
+      type: code
+      code: "Explain this Delta Live Tables pipeline and identify test gaps."
+  - id: 7
+    bg: ivory
+    watermark: "CTA"
+    icon: check
+    heading: "Use AI on the boring work first"
+    content:
+      type: cta
+      command: "Pick one repetitive data-engineering task."
+      items:
+        - "Measure the before/after"
+        - "Keep human review in the loop"
+      question: "What workflow would you automate first?"
+

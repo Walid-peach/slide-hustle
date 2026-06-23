@@ -1,0 +1,79 @@
+meta:
+  topic: "Remotion"
+  language: EN
+  slides: 7
+  output: "slide_hustle_remotion"
+  export_pdf: true
+
+slides:
+  - id: 1
+    bg: navy
+    watermark: "REMOTION"
+    title: "What if your video pipeline was code?"
+    subtitle: "Remotion turns React components into programmable video."
+    swipe: true
+  - id: 2
+    bg: ivory
+    watermark: "LIMITS"
+    icon: warning
+    heading: "Manual video does not scale"
+    content:
+      type: bullets
+      items:
+        - "Repeated layouts"
+        - "Manual exports"
+        - "Hard-to-reuse animations"
+    verdict: "Every edit becomes production work."
+  - id: 3
+    bg: navy
+    watermark: "CODE"
+    icon: code
+    heading: "With code, video becomes repeatable"
+    content:
+      type: bullets
+      items:
+        - "Components"
+        - "Props"
+        - "Data-driven scenes"
+  - id: 4
+    bg: ivory
+    watermark: "SYSTEM"
+    icon: bundles
+    heading: "The pattern is familiar"
+    content:
+      type: bullets+box
+      items:
+        - "Design system"
+        - "Reusable scenes"
+        - "Automated rendering"
+      box: "Frontend engineering meets media production."
+  - id: 5
+    bg: red
+    watermark: "UNLOCK"
+    icon: sun
+    heading: "Templates become products."
+    content:
+      type: quote
+      text: "When video is code, one good template can generate hundreds of assets."
+    verdict: "That changes the economics."
+  - id: 6
+    bg: navy
+    watermark: "COMMAND"
+    icon: code
+    heading: "A render mindset"
+    content:
+      type: code
+      code: "npm run render -- --props campaign.json"
+  - id: 7
+    bg: ivory
+    watermark: "CTA"
+    icon: check
+    heading: "Start with one repeatable format"
+    content:
+      type: cta
+      command: "Turn one recurring video into a component."
+      items:
+        - "Keep layout fixed"
+        - "Drive copy from data"
+      question: "What video would you generate with code?"
+

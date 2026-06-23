@@ -1,0 +1,82 @@
+meta:
+  topic: "Claude Code Subagents"
+  language: EN
+  slides: 7
+  output: "slide_hustle_subagents"
+  export_pdf: true
+
+slides:
+  - id: 1
+    bg: navy
+    watermark: "SUBAGENTS"
+    title: "Subagents in Claude Code change the workflow."
+    subtitle: "One agent is useful. A coordinated team is where it gets interesting."
+    swipe: true
+  - id: 2
+    bg: ivory
+    watermark: "PROBLEM"
+    icon: warning
+    heading: "Sequential work kills flow"
+    content:
+      type: bullets
+      items:
+        - "Explore an unknown codebase"
+        - "Write tests"
+        - "Document the pipeline"
+    verdict: "Different work wants different context."
+  - id: 3
+    bg: navy
+    watermark: "SHIFT"
+    icon: agent
+    heading: "Split the mission"
+    content:
+      type: agents
+      items:
+        - name: "Research"
+          description: "Map the codebase and risks"
+        - name: "Builder"
+          description: "Implement the scoped change"
+        - name: "Reviewer"
+          description: "Catch regressions before merge"
+  - id: 4
+    bg: ivory
+    watermark: "RULES"
+    icon: bundles
+    heading: "Give each agent constraints"
+    content:
+      type: bullets+box
+      items:
+        - "Clear input"
+        - "Clear output"
+        - "Clear stopping point"
+      box: "Autonomy works best with boundaries."
+  - id: 5
+    bg: red
+    watermark: "LEVERAGE"
+    icon: sun
+    heading: "The win is not speed. It is focus."
+    content:
+      type: quote
+      text: "The main agent can stay strategic while subagents handle bounded exploration."
+    verdict: "Less context switching. Better decisions."
+  - id: 6
+    bg: navy
+    watermark: "COMMAND"
+    icon: code
+    heading: "The prompt"
+    content:
+      type: code
+      code: 'claude "Use subagents to review this PR and summarize risks"'
+  - id: 7
+    bg: ivory
+    watermark: "CTA"
+    icon: check
+    heading: "Try it on one messy task"
+    content:
+      type: cta
+      command: "Pick a task with research, implementation, and review."
+      items:
+        - "Keep each role specific"
+        - "Ask for evidence, not vibes"
+      question: "Where would subagents save you the most time?"
+
