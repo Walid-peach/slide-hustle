@@ -46,7 +46,7 @@ slides:
         - "Brand-safe colors"
       box: "No blank canvas. No layout lottery."
   - id: 5
-    bg: red
+    bg: navy
     watermark: "SHIP"
     icon: sun
     heading: "From note to deck in minutes."
@@ -55,7 +55,7 @@ slides:
       text: "The point is not to make more content. It is to lower the cost of sharing useful ideas."
     verdict: "That is the hustle."
   - id: 6
-    bg: navy
+    bg: red
     watermark: "EXPORT"
     icon: arrow
     heading: "Then export"

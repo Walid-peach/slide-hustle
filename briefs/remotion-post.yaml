@@ -48,7 +48,7 @@ slides:
         - "Automated rendering"
       box: "Frontend engineering meets media production."
   - id: 5
-    bg: red
+    bg: navy
     watermark: "UNLOCK"
     icon: sun
     heading: "Templates become products."
@@ -57,7 +57,7 @@ slides:
       text: "When video is code, one good template can generate hundreds of assets."
     verdict: "That changes the economics."
   - id: 6
-    bg: navy
+    bg: red
     watermark: "COMMAND"
     icon: code
     heading: "A render mindset"

@@ -102,9 +102,11 @@ python compare_reference.py path/to/reference.pdf output/slide_hustle_example
 
 # or with make
 make compare REFERENCE=path/to/reference.pdf
+make compare REFERENCE=path/to/reference.pdf OUTPUT=output/slide_hustle_databricks
+make compare REFERENCE=path/to/reference.pdf TOLERANCE=5
 ```
 
-The comparison reports slide count, dimensions, exact PNG hash matches, and mean pixel delta. PDF comparisons allow a small default tolerance because PDF rendering can introduce compression differences.
+The comparison reports slide count, dimensions, exact PNG hash matches, and mean pixel delta. Reference pages are resized to the generated slide dimensions by default. The default visual tolerance is 15%, which is meant for "looks like the reference" checks where the copy may differ; lower it for exact regression tests.
 
 ## Design System
 
@@ -115,7 +117,7 @@ All slides use the same fixed brand rules:
 - Font: Syne
 - Bottom bar: `AI · Data Engineering · 2026`
 - Slide 1: navy hook slide
-- Slide 5: red impact slide, maximum one per carousel
+- Slide 6: red impact slide, maximum one per carousel
 - Last slide: ivory CTA
 
 See [BRAND.md](BRAND.md) and [FRAMEWORK.md](FRAMEWORK.md) for the full rules.

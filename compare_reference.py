@@ -58,12 +58,16 @@ def render_pdf(pdf_path: Path, output_dir: Path) -> list[Path]:
         return render_pdf_with_poppler(pdf_path, output_dir)
 
 
-def compare_images(reference: Path, generated: Path) -> tuple[bool, float, tuple[int, int] | None]:
+def compare_images(
+    reference: Path, generated: Path, resize_reference: bool
+) -> tuple[bool, float, tuple[int, int] | None]:
     with Image.open(reference) as ref_image, Image.open(generated) as gen_image:
         ref = ref_image.convert("RGB")
         gen = gen_image.convert("RGB")
         if ref.size != gen.size:
-            return False, 100.0, None
+            if not resize_reference:
+                return False, 100.0, None
+            ref = ref.resize(gen.size, Image.Resampling.LANCZOS)
 
         diff = ImageChops.difference(ref, gen)
         bbox = diff.getbbox()
@@ -86,7 +90,12 @@ def main() -> None:
     )
     parser.add_argument("reference", type=Path, help="Reference PDF file or folder of slide_*.png files.")
     parser.add_argument("generated", type=Path, help="Generated output folder containing slide_*.png files.")
-    parser.add_argument("--tolerance", type=float, default=1.0, help="Allowed mean pixel delta percent.")
+    parser.add_argument("--tolerance", type=float, default=15.0, help="Allowed mean pixel delta percent.")
+    parser.add_argument(
+        "--no-resize-reference",
+        action="store_true",
+        help="Fail on size mismatch instead of resizing reference pages to generated slide dimensions.",
+    )
     args = parser.parse_args()
 
     generated = existing_slide_paths(args.generated)
@@ -108,7 +117,9 @@ def main() -> None:
         failures = 0
         for index, (reference, generated_slide) in enumerate(zip(references, generated), start=1):
             exact_hash = sha256(reference) == sha256(generated_slide)
-            identical, delta, size = compare_images(reference, generated_slide)
+            identical, delta, size = compare_images(
+                reference, generated_slide, resize_reference=not args.no_resize_reference
+            )
             passed = identical or delta <= args.tolerance
             failures += 0 if passed else 1
             size_label = f"{size[0]}x{size[1]}" if size else "size-mismatch"

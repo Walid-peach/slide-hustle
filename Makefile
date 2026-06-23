@@ -1,4 +1,6 @@
 PYTHON ?= .venv/bin/python
+TOLERANCE ?= 15
+OUTPUT ?= output/slide_hustle_example
 
 .PHONY: setup example generate export compare clean-output
 
@@ -16,7 +18,7 @@ export:
 example: generate export
 
 compare:
-	$(PYTHON) compare_reference.py $(REFERENCE) output/slide_hustle_example
+	$(PYTHON) compare_reference.py $(REFERENCE) $(OUTPUT) --tolerance $(TOLERANCE)
 
 clean-output:
 	rm -rf output/*

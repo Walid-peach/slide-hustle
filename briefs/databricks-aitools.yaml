@@ -49,7 +49,7 @@ slides:
         - "Trace production changes"
       box: "AI does not remove ownership."
   - id: 5
-    bg: red
+    bg: navy
     watermark: "IMPACT"
     icon: sun
     heading: "The best AI workflow is boring."
@@ -58,7 +58,7 @@ slides:
       text: "It saves time, preserves controls, and makes the next engineer faster."
     verdict: "That is what production teams need."
   - id: 6
-    bg: navy
+    bg: red
     watermark: "PROMPT"
     icon: code
     heading: "Prompt the system"

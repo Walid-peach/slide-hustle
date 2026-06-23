@@ -18,8 +18,8 @@ Slide 1 -> Navy
 Slide 2 -> Ivory
 Slide 3 -> Navy
 Slide 4 -> Ivory
-Slide 5 -> Red
-Slide 6 -> Navy
+Slide 5 -> Navy
+Slide 6 -> Red
 Slide 7 -> Ivory
 ```
 

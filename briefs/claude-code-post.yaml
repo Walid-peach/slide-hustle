@@ -50,7 +50,7 @@ slides:
         - "Review a risky diff"
       box: "Specific asks produce specific engineering work."
   - id: 5
-    bg: red
+    bg: navy
     watermark: "SHIFT"
     icon: sun
     heading: "The skill is delegation."
@@ -59,7 +59,7 @@ slides:
       text: "You do not outsource judgment. You outsource mechanical drag."
     verdict: "That is the unlock."
   - id: 6
-    bg: navy
+    bg: red
     watermark: "PROMPT"
     icon: code
     heading: "A useful prompt"

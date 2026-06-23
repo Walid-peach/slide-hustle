@@ -51,7 +51,7 @@ slides:
         - "Clear stopping point"
       box: "Autonomy works best with boundaries."
   - id: 5
-    bg: red
+    bg: navy
     watermark: "LEVERAGE"
     icon: sun
     heading: "The win is not speed. It is focus."
@@ -60,7 +60,7 @@ slides:
       text: "The main agent can stay strategic while subagents handle bounded exploration."
     verdict: "Less context switching. Better decisions."
   - id: 6
-    bg: navy
+    bg: red
     watermark: "COMMAND"
     icon: code
     heading: "The prompt"

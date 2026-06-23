@@ -49,7 +49,7 @@ slides:
       box: "Systems beat blank pages."
 
   - id: 5
-    bg: red
+    bg: navy
     watermark: "IMPACT"
     icon: sun
     heading: "The real leverage"
@@ -63,7 +63,7 @@ slides:
     verdict: "Make the highest-impact slide impossible to miss."
 
   - id: 6
-    bg: navy
+    bg: red
     watermark: "PROMPT"
     icon: code
     heading: "The command"
