@@ -93,6 +93,19 @@ Each run creates:
 - `output/<meta.output>/slide_01.png` through `slide_N.png`
 - `output/<meta.output>/<meta.output>.pdf`
 
+## Compare Against a Reference
+
+After generating a deck, compare it against a reference PDF or a folder of `slide_*.png` images:
+
+```bash
+python compare_reference.py path/to/reference.pdf output/slide_hustle_example
+
+# or with make
+make compare REFERENCE=path/to/reference.pdf
+```
+
+The comparison reports slide count, dimensions, exact PNG hash matches, and mean pixel delta. PDF comparisons allow a small default tolerance because PDF rendering can introduce compression differences.
+
 ## Design System
 
 All slides use the same fixed brand rules:

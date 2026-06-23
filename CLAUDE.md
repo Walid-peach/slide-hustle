@@ -1,4 +1,4 @@
-# slide-hustle agent instructions
+# Slide Hustle agent instructions
 
 ## On every session, read in this order:
 
@@ -14,6 +14,7 @@
 - Red background means maximum one slide per carousel.
 - `templates/slide-hustle.css` is read-only unless the user explicitly asks to change the design system.
 - After generating `slides.html`, always run `export.py` automatically.
+- When a reference PDF is provided, run `compare_reference.py` against the generated output.
 - If asked to fix slide N, only re-export slide N.
 - Output folder equals the brief `meta.output` value.
 

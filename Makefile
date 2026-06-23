@@ -1,6 +1,6 @@
 PYTHON ?= .venv/bin/python
 
-.PHONY: setup example generate export clean-output
+.PHONY: setup example generate export compare clean-output
 
 setup:
 	python3 -m venv .venv
@@ -14,6 +14,9 @@ export:
 	$(PYTHON) export.py output/slide_hustle_example/slides.html
 
 example: generate export
+
+compare:
+	$(PYTHON) compare_reference.py $(REFERENCE) output/slide_hustle_example
 
 clean-output:
 	rm -rf output/*
