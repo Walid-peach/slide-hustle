@@ -9,8 +9,8 @@ slides:
   - id: 1
     bg: navy
     watermark: "DATABRICKS"
-    title: "AI tools are entering the data engineering workflow."
-    subtitle: "The opportunity is not magic. It is removing low-value friction."
+    title: "Databricks AI tools for modern data engineering."
+    subtitle: "What matters, what changes, and where to start."
     swipe: true
   - id: 2
     bg: ivory

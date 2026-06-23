@@ -72,6 +72,26 @@ body {
   opacity: 0.055;
 }
 
+.slide[data-slide="1"] .watermark {
+  opacity: 0.015;
+}
+
+.slide[data-slide="1"] .content {
+  gap: 28px;
+  opacity: 0.9;
+  transform: translateY(120px);
+}
+
+.slide[data-slide="1"] h1 {
+  max-width: 900px;
+  font-size: 72px;
+}
+
+.slide[data-slide="1"] .subtitle {
+  max-width: 820px;
+  font-size: 28px;
+}
+
 .content {
   position: relative;
   z-index: 1;
