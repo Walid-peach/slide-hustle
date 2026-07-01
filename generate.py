@@ -1,11 +1,14 @@
 from __future__ import annotations
 
 import argparse
+import asyncio
 import html
 import re
 from pathlib import Path
 
 import yaml
+
+from export import assemble_pdf, existing_slide_paths, export_slides
 
 
 ROOT = Path(__file__).resolve().parent
@@ -182,6 +185,11 @@ def main() -> None:
     slides_html = output_dir / "slides.html"
     slides_html.write_text(html_doc, encoding="utf-8")
     print(f"Generated {slides_html}")
+
+    exported = asyncio.run(export_slides(slides_html))
+    pdf_path = output_dir / f"{output_dir.name}.pdf"
+    assemble_pdf(existing_slide_paths(output_dir), pdf_path)
+    print(f"Exported {len(exported)} slide(s) and {pdf_path}")
 
 
 if __name__ == "__main__":
