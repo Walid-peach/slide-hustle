@@ -58,7 +58,9 @@ def render_pdf_with_poppler(pdf_path: Path, output_dir: Path) -> list[Path]:
 def render_pdf(pdf_path: Path, output_dir: Path) -> list[Path]:
     try:
         return render_pdf_with_pymupdf(pdf_path, output_dir)
-    except RuntimeError:
+    except RuntimeError as exc:
+        if "PyMuPDF is not installed" not in str(exc):
+            raise
         return render_pdf_with_poppler(pdf_path, output_dir)
 
 

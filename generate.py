@@ -8,7 +8,7 @@ from pathlib import Path
 
 import yaml
 
-from export import assemble_pdf, existing_slide_paths, export_slides
+from export import assemble_pdf, export_slides
 
 
 ROOT = Path(__file__).resolve().parent
@@ -120,7 +120,7 @@ def render_deck(brief: dict) -> tuple[str, Path]:
     output_dir = OUTPUT / output_name
 
     declared = meta.get("slides")
-    if declared is not None and declared != len(slides):
+    if declared is not None and int(declared) != len(slides):
         raise ValueError(
             f"Slide count mismatch: declared {declared}, found {len(slides)}."
         )

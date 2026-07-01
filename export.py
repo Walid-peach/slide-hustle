@@ -69,9 +69,9 @@ async def main_async() -> None:
     output_dir = args.slides_html.resolve().parent
     pdf_path = output_dir / f"{output_dir.name}.pdf"
 
-    should_pdf = (args.rebuild_pdf and not args.no_pdf) or (not args.no_pdf and args.slide is None)
+    should_pdf = not args.no_pdf and (args.rebuild_pdf or args.slide is None)
     if should_pdf:
-        assemble_pdf(existing_slide_paths(output_dir), pdf_path)
+        assemble_pdf(exported, pdf_path)
         verb = "Rebuilt" if args.rebuild_pdf else "Exported"
         print(f"{verb} {pdf_path}")
 
