@@ -118,13 +118,14 @@ def render_deck(brief: dict) -> tuple[str, Path]:
     meta = brief.get("meta", {})
     output_name = meta.get("output", "carousel")
     output_dir = OUTPUT / output_name
-    output_dir.mkdir(parents=True, exist_ok=True)
 
     declared = meta.get("slides")
-    if declared is not None and int(declared) != len(slides):
+    if declared is not None and declared != len(slides):
         raise ValueError(
-            f"Brief declares meta.slides={declared} but contains {len(slides)} slide(s)."
+            f"Slide count mismatch: declared {declared}, found {len(slides)}."
         )
+
+    output_dir.mkdir(parents=True, exist_ok=True)
 
     red_count = sum(1 for slide in slides if slide.get("bg") == "red")
     if red_count > 1:
