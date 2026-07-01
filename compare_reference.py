@@ -24,7 +24,8 @@ def render_pdf_with_pymupdf(pdf_path: Path, output_dir: Path) -> list[Path]:
     document = fitz.open(pdf_path)
     try:
         for index, page in enumerate(document, start=1):
-            pixmap = page.get_pixmap(matrix=fitz.Matrix(1, 1), alpha=False)
+            scale = 1080 / page.rect.width
+            pixmap = page.get_pixmap(matrix=fitz.Matrix(scale, scale), alpha=False)
             path = output_dir / f"reference-{index:02}.png"
             pixmap.save(path)
             rendered.append(path)
