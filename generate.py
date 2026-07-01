@@ -188,7 +188,7 @@ def main() -> None:
 
     exported = asyncio.run(export_slides(slides_html))
     pdf_path = output_dir / f"{output_dir.name}.pdf"
-    assemble_pdf(existing_slide_paths(output_dir), pdf_path)
+    assemble_pdf(exported, pdf_path)
     print(f"Exported {len(exported)} slide(s) and {pdf_path}")
 
 
