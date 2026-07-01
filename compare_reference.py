@@ -24,7 +24,10 @@ def render_pdf_with_pymupdf(pdf_path: Path, output_dir: Path) -> list[Path]:
     document = fitz.open(pdf_path)
     try:
         for index, page in enumerate(document, start=1):
-            scale = 1080 / page.rect.width
+            if page.rect.width == 0 or page.rect.height == 0:
+                raise RuntimeError(f"PDF page {index} has zero dimensions; cannot render.")
+            # 2160 matches device_scale_factor=2 (1080px viewport * 2x)
+            scale = min(2160 / page.rect.width, 2160 / page.rect.height)
             pixmap = page.get_pixmap(matrix=fitz.Matrix(scale, scale), alpha=False)
             path = output_dir / f"reference-{index:02}.png"
             pixmap.save(path)
@@ -55,7 +58,9 @@ def render_pdf_with_poppler(pdf_path: Path, output_dir: Path) -> list[Path]:
 def render_pdf(pdf_path: Path, output_dir: Path) -> list[Path]:
     try:
         return render_pdf_with_pymupdf(pdf_path, output_dir)
-    except RuntimeError:
+    except RuntimeError as exc:
+        if "PyMuPDF is not installed" not in str(exc):
+            raise
         return render_pdf_with_poppler(pdf_path, output_dir)
 
 

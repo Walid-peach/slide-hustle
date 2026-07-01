@@ -15,7 +15,7 @@ generate:
 export:
 	$(PYTHON) export.py output/slide_hustle_example/slides.html
 
-example: generate export  # generate already runs export; this target exists for backward compat
+example: generate
 
 compare:
 	$(PYTHON) compare_reference.py $(REFERENCE) $(OUTPUT) --tolerance $(TOLERANCE)
