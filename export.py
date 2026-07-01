@@ -4,6 +4,7 @@ import argparse
 import asyncio
 from pathlib import Path
 
+import img2pdf
 from PIL import Image, JpegImagePlugin
 from playwright.async_api import async_playwright
 
@@ -39,11 +40,7 @@ async def export_slides(slides_html: Path, only_slide: int | None = None) -> lis
 def assemble_pdf(image_paths: list[Path], pdf_path: Path) -> None:
     if not image_paths:
         return
-    images = [Image.open(path).convert("RGB") for path in image_paths]
-    first, rest = images[0], images[1:]
-    first.save(pdf_path, save_all=True, append_images=rest)
-    for image in images:
-        image.close()
+    pdf_path.write_bytes(img2pdf.convert([str(p) for p in image_paths]))
 
 
 def existing_slide_paths(output_dir: Path) -> list[Path]:
