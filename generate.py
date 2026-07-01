@@ -117,6 +117,12 @@ def render_deck(brief: dict) -> tuple[str, Path]:
     output_dir = OUTPUT / output_name
     output_dir.mkdir(parents=True, exist_ok=True)
 
+    declared = meta.get("slides")
+    if declared is not None and int(declared) != len(slides):
+        raise ValueError(
+            f"Brief declares meta.slides={declared} but contains {len(slides)} slide(s)."
+        )
+
     red_count = sum(1 for slide in slides if slide.get("bg") == "red")
     if red_count > 1:
         raise ValueError("Brand rule violation: only one red slide is allowed.")
