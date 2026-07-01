@@ -55,17 +55,26 @@ async def main_async() -> None:
     parser.add_argument("slides_html", type=Path, help="Path to generated slides.html.")
     parser.add_argument("--slide", type=int, help="Only export one slide number.")
     parser.add_argument("--no-pdf", action="store_true", help="Skip PDF assembly.")
+    parser.add_argument(
+        "--rebuild-pdf",
+        action="store_true",
+        help="After a single-slide export, reassemble the PDF from all existing slide PNGs.",
+    )
     args = parser.parse_args()
 
     exported = await export_slides(args.slides_html, args.slide)
     output_dir = args.slides_html.resolve().parent
-    if not args.no_pdf and args.slide is None:
-        assemble_pdf(existing_slide_paths(output_dir), output_dir / f"{output_dir.name}.pdf")
+    pdf_path = output_dir / f"{output_dir.name}.pdf"
+
+    if args.rebuild_pdf:
+        assemble_pdf(existing_slide_paths(output_dir), pdf_path)
+        print(f"Rebuilt {pdf_path}")
+    elif not args.no_pdf and args.slide is None:
+        assemble_pdf(existing_slide_paths(output_dir), pdf_path)
+        print(f"Exported {pdf_path}")
 
     for path in exported:
         print(f"Exported {path}")
-    if not args.no_pdf and args.slide is None:
-        print(f"Exported {output_dir / f'{output_dir.name}.pdf'}")
 
 
 def main() -> None:
