@@ -2,14 +2,12 @@ from __future__ import annotations
 
 import argparse
 import asyncio
+import io
 from pathlib import Path
 
 import img2pdf
-from PIL import Image, JpegImagePlugin
+from PIL import Image
 from playwright.async_api import async_playwright
-
-
-_ = JpegImagePlugin
 
 
 async def export_slides(slides_html: Path, only_slide: int | None = None) -> list[Path]:
@@ -40,7 +38,15 @@ async def export_slides(slides_html: Path, only_slide: int | None = None) -> lis
 def assemble_pdf(image_paths: list[Path], pdf_path: Path) -> None:
     if not image_paths:
         return
-    pdf_path.write_bytes(img2pdf.convert([str(p) for p in image_paths]))
+    rgb_pages = []
+    for path in image_paths:
+        buf = io.BytesIO()
+        with Image.open(path) as img:
+            img.convert("RGB").save(buf, format="PNG")
+        rgb_pages.append(buf.getvalue())
+    # 192 dpi maps 2160px (device_scale_factor=2) to 11.25in, matching 1080px at 96dpi
+    layout_fun = img2pdf.get_fixed_dpi_layout_fun((192, 192))
+    pdf_path.write_bytes(img2pdf.convert(rgb_pages, layout_fun=layout_fun))
 
 
 def existing_slide_paths(output_dir: Path) -> list[Path]:
