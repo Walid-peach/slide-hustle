@@ -18,7 +18,7 @@ async def export_slides(slides_html: Path, only_slide: int | None = None) -> lis
 
     async with async_playwright() as playwright:
         browser = await playwright.chromium.launch()
-        page = await browser.new_page(viewport={"width": 1080, "height": 1080}, device_scale_factor=1)
+        page = await browser.new_page(viewport={"width": 1080, "height": 1080}, device_scale_factor=2)
         await page.goto(slides_html.as_uri(), wait_until="networkidle")
         await page.locator(".slide").first.wait_for()
         count = await page.locator(".slide").count()
